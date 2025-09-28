@@ -1,24 +1,31 @@
 #include <stdio.h>
 #include <math.h>
 
+// Prototipos de funciones
+double CalculoSuma(double a, double b);
+
+// Mensaje de bienvenida al iniciar el programa
 void Bienvenida() {
     printf("==================================================\n");
     printf("    SISTEMA DE FISICA, GEOMETRIA Y MATEMATICAS    \n");
     printf("==================================================\n");
 }
 
+// Mensaje de despedida al salir del programa
 void Despedida() {
     printf("===================================\n");
     printf("    Gracias por usar el sistema!   \n");
     printf("===================================\n");
 }
 
+// Mensaje de regreso al menu principal
 void Regresando() {
     printf("=======================================\n");
     printf("    Regresando al menu principal...    \n");
     printf("=======================================\n");
 }
 
+// Genera los calculos de fisica: velocidad, tiempo y distancia
 void Fisica() {
     int opcion;
     double distancia, velocidad, tiempo;
@@ -73,6 +80,7 @@ void Fisica() {
     } while (opcion != 0);
 }
 
+// Genera los calculos de matematicas: suma, residuo y potencia
 void Matematicas() {
     int opcion;
     double num1, num2, resultado;
@@ -94,7 +102,7 @@ void Matematicas() {
                 scanf("%lf", &num1);
                 printf("Ingrese el segundo numero: ");
                 scanf("%lf", &num2);
-                resultado = num1 + num2;
+                resultado = CalculoSuma(num1, num2);
                 printf("Formula: S = A + B\n");
                 printf("Resultado: Suma = %.2lf\n", resultado);
                 break;
@@ -127,6 +135,7 @@ void Matematicas() {
     } while (opcion != 0);
 }
 
+// Genera los calculos de geometria: area de circulo, area total de cono y area total de cubo
 void Geometria() {
     int opcion;
     double radio, lado, altura, area;
@@ -176,6 +185,11 @@ void Geometria() {
                 printf("Opcion invalida. Intente de nuevo.\n");
         }
     } while (opcion != 0);
+}
+
+// Funcion parametrizada para realizar la suma de dos numeros
+double CalculoSuma(double a, double b) {
+    return a + b;
 }
 
 int main() {
